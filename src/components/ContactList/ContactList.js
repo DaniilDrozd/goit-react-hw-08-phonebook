@@ -2,8 +2,8 @@ import React from 'react';
 import { useEffect } from 'react';
 import css from './ContactList.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteContact, getContacts } from 'redux/ToContacts/operations';
-import { selectContacts, selectFilter } from 'redux/ToContacts/selectors';
+import { deleteContact, addContact } from 'redux/Contacts/operations';
+import { selectContacts, selectFilter } from 'redux/Contacts/selectors';
 const ContactList = () => {
   const contacts = useSelector(selectContacts);
   const filter = useSelector(selectFilter);
@@ -14,7 +14,7 @@ const ContactList = () => {
   );
 
   useEffect(() => {
-    dispatch(getContacts());
+    dispatch(addContact());
   }, [dispatch]);
 
   return (
