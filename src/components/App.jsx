@@ -11,8 +11,8 @@ import { PrivateRoute } from './PrivateRoute';
 
 
 
-const RegisterPage = lazy(() => import('../pages/Register'));
-const LoginPage = lazy(() => import('../pages/Login'));
+const RegisterPage = lazy(() => import('../pages/RegisterPages/Register'));
+const LoginPage = lazy(() => import('../pages/LoginPages/Login'));
 const ContactsPage = lazy(() => import('../pages/ContactsPage/Contacts'));
 
 export const App = () => {
@@ -24,7 +24,7 @@ export const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <b>Refreshing user...</b>
+    <h2>Refreshing user...</h2>
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -32,13 +32,13 @@ export const App = () => {
         <Route
           path="/register"
           element={
-            <RestrictedRoute redirectTo="/tasks" component={<RegisterPage />} />
+            <RestrictedRoute redirectTo="/contacts" component={<RegisterPage />} />
           }
         />
         <Route
           path="/login"
           element={
-            <RestrictedRoute redirectTo="/tasks" component={<LoginPage />} />
+            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
           }
         />
       </Route>

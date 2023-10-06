@@ -16,3 +16,4 @@ export const UserMenu = () => {
     </div>
   );
 };
+export default UserMenu;
