@@ -18,12 +18,14 @@ const Navigation = () => {
         </NavLink>
       ) : (
         <>
-          <NavLink to="/register" className={css.NavLink}>
-            Register
-          </NavLink>
-          <NavLink to="/login" className={css.NavLink}>
-            Log In
-          </NavLink>
+          <nav className={css.navRegistor}>
+            <NavLink to="/register" className={css.NavLink}>
+              Register
+            </NavLink>
+            <NavLink to="/login" className={css.NavLink}>
+              Log In
+            </NavLink>
+          </nav>
         </>
       )}
       {isLoggedIn && <UserMenu />}

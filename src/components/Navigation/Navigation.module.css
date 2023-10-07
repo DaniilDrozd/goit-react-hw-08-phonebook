@@ -3,14 +3,19 @@
   text-decoration: none;
   padding: 12px;
   font-weight: 700;
-  color: #2a363b;
+  color: black;
 }
 
 .link.active {
   color: #e84a5f;
 }
 .nav {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  align-items: center;
 }
+
 .NavLink {
   display: flex;
   gap: 25px;
@@ -18,5 +23,9 @@
   text-decoration: none;
   padding: 12px;
   font-weight: 700;
-  color: #2a363b;
+  color: black;
+}
+.navRegistor {
+  display: flex;
+  gap: 25px;
 }

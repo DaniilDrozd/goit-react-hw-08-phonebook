@@ -1,0 +1,37 @@
+.form {
+  width: 320px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0px auto;
+  background-color: rgb(231, 220, 245);
+  padding: 40px;
+  display: flex;
+}
+.divRegister {
+  text-align: center;
+  box-sizing: border-box;
+  min-height: calc(100vh - 270px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.label {
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: black;
+  font-weight: 500;
+  justify-content: center;
+  display: flex;
+}
+.btn {
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bolder;
+  padding: 10px;
+}
