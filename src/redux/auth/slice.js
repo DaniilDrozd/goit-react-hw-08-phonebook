@@ -1,38 +1,46 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { register, logIn, logOut, refreshUser } from './operations';
 
-const handlePending = state => {
-  state.isLoading = true;
+const initialState = {
+  user: { name: null, email: null },
+  token: null,
+  isLoggedIn: false,
+  isRefreshing: false,
 };
-const handleRejected = (state, action) => {
-  state.isLoading = false;
-  state.error = action.payload;
-};
+
 const authSlice = createSlice({
-  name: 'tasks',
-  initialState: {
-    items: [],
-    isLoading: false,
-    error: null,
-  },
+  name: 'auth',
+  initialState,
+  reducers: {},
   extraReducers: builder => {
     builder
-      .addCase(register.pending, handlePending)
-      .addCase(logIn.pending, handlePending)
-      .addCase(refreshUser.pending, handlePending)
-      .addCase(register.rejected, handleRejected)
-      .addCase(logIn.rejected, handleRejected)
-      .addCase(refreshUser.rejected, handleRejected)
       .addCase(register.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.error = null;
-        state.items = action.payload;
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.isLoggedIn = true;
+      })
+      .addCase(logIn.fulfilled, (state, action) => {
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.isLoggedIn = true;
       })
       .addCase(logOut.fulfilled, state => {
-        state.items = [];
-        state.error = null;
-        state.isLoading = false;
+        state.user = { name: null, email: null };
+        state.token = null;
+        state.isLoggedIn = false;
+      })
+      .addCase(refreshUser.pending, state => {
+        state.isRefreshing = true;
+      })
+      .addCase(refreshUser.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.isLoggedIn = true;
+        state.isRefreshing = false;
+      })
+      .addCase(refreshUser.rejected, state => {
+        state.isRefreshing = false;
       });
   },
 });
+
 export const authReducer = authSlice.reducer;

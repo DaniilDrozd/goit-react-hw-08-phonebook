@@ -12,7 +12,7 @@ export function Filter() {
 
   return (
     <div>
-      <label>
+      <label className={css.NameStyle}>
         Find contacts by name
         <input
           type="text"

@@ -10,7 +10,7 @@ const ContactList = () => {
   const dispatch = useDispatch();
 
   const getViewContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
+    (contact.name || '').toLowerCase().includes((filter || '').toLowerCase())
   );
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const ContactList = () => {
   return (
     <ul className={css.ulList}>
       {getViewContacts.map(({ name, number, id }) => (
-        <li key={id} id={id}>
+        <li className={css.Li} key={id} id={id}>
           {name}: {number}
           <button
             className={css.btnContact}

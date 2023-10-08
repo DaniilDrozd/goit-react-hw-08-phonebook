@@ -50,7 +50,7 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={css.form} onSubmit={handleSubmit}>
       <label className={css.NameStyle}>
         Name:
         <input
@@ -71,7 +71,9 @@ function ContactForm() {
           onChange={handleChange}
         />
       </label>
-      <button type="submit">Submit</button>
+      <button className={css.btn} type="submit">
+        Submit
+      </button>
     </form>
   );
 }
