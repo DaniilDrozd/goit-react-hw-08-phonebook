@@ -12,21 +12,20 @@ const Navigation = () => {
       <NavLink to="/" className={css.link}>
         Home
       </NavLink>
-      {isLoggedIn ? (
+      {isLoggedIn && (
         <NavLink to="/contacts" className={css.link}>
           Contacts
         </NavLink>
-      ) : (
-        <>
-          <nav className={css.navRegistor}>
-            <NavLink to="/register" className={css.NavLink}>
-              Register
-            </NavLink>
-            <NavLink to="/login" className={css.NavLink}>
-              Log In
-            </NavLink>
-          </nav>
-        </>
+      )}
+      {!isLoggedIn && (
+        <nav className={css.navRegistor}>
+          <NavLink to="/register" className={css.NavLink}>
+            Register
+          </NavLink>
+          <NavLink to="/login" className={css.NavLink}>
+            Log In
+          </NavLink>
+        </nav>
       )}
       {isLoggedIn && <UserMenu />}
     </nav>
