@@ -41,13 +41,14 @@ export const App = () => {
             <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
           }
         />
-      </Route>
-      <Route
+           <Route
            path="contacts"
           element={
                 <PrivateRoute redirectTo="/login"  component={<ContactsPage />} />
               }
             />
+      </Route>
+   
     </Routes>
   );
 };

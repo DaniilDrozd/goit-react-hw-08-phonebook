@@ -1,0 +1,22 @@
+.wrapper {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-bottom: 0;
+  margin-left: 500px;
+}
+.logout {
+  padding: 5px;
+  border: 0 solid transparent;
+  border-radius: 4px;
+  color: #000000;
+  background-color: #e7dcf5;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+  opacity: 0.8;
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+.username {
+  margin-right: 15px;
+}

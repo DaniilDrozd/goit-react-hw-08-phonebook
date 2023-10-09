@@ -4,6 +4,8 @@
   padding: 12px;
   font-weight: 700;
   color: black;
+  display: -webkit-flex;
+  display: flex;
 }
 
 .link.active {
@@ -11,9 +13,8 @@
 }
 .nav {
   display: flex;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  padding: 0;
 }
 
 .NavLink {

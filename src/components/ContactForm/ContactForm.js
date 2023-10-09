@@ -52,7 +52,7 @@ function ContactForm() {
   return (
     <form className={css.form} onSubmit={handleSubmit}>
       <label className={css.NameStyle}>
-        Name:
+        Name
         <input
           className={css.inputStyle}
           type="text"
@@ -61,8 +61,8 @@ function ContactForm() {
           onChange={handleChange}
         />
       </label>
-      <label className={css.NumberStyle}>
-        Number:
+      <label className={css.NameStyle}>
+        Number
         <input
           className={css.inputStyle}
           type="text"
@@ -72,7 +72,7 @@ function ContactForm() {
         />
       </label>
       <button className={css.btn} type="submit">
-        Submit
+        Add Contact
       </button>
     </form>
   );
