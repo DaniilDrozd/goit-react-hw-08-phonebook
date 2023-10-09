@@ -9,7 +9,7 @@ export function Filter() {
   const handleFilterChange = event => {
     dispatch(changeFilter(event.target.value));
   };
-  console.log('Current filter value:', filter);
+
   return (
     <div>
       <label className={css.NameStyle}>
