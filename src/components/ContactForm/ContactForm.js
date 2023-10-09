@@ -59,6 +59,7 @@ function ContactForm() {
           name="name"
           value={contactName}
           onChange={handleChange}
+          required
         />
       </label>
       <label className={css.NameStyle}>
@@ -69,6 +70,7 @@ function ContactForm() {
           name="number"
           value={contactNumber}
           onChange={handleChange}
+          required
         />
       </label>
       <button className={css.btn} type="submit">

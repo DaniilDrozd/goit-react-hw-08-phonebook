@@ -1,8 +1,7 @@
 import React from 'react';
-import { useEffect } from 'react';
 import css from './ContactList.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteContact, addContact } from 'redux/Contacts/operations';
+import { deleteContact } from 'redux/Contacts/operations';
 import { selectContacts, selectFilter } from 'redux/Contacts/selectors';
 const ContactList = () => {
   const contacts = useSelector(selectContacts);
@@ -10,12 +9,8 @@ const ContactList = () => {
   const dispatch = useDispatch();
 
   const getViewContacts = contacts.filter(contact =>
-    (contact.name || '').toLowerCase().includes((filter || '').toLowerCase())
+    contact.name.toLowerCase().includes(filter.toLowerCase())
   );
-
-  useEffect(() => {
-    dispatch(addContact());
-  }, [dispatch]);
 
   return (
     <ul className={css.ulList}>

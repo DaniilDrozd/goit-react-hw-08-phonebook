@@ -22,11 +22,11 @@ export const LoginForm = () => {
       <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
         <label className={css.label}>
           Email
-          <input type="email" name="email" />
+          <input type="email" name="email" required />
         </label>
         <label className={css.label}>
           Password
-          <input minLength={8} type="password" name="password" />
+          <input minLength={8} type="password" name="password" required />
         </label>
         <button className={css.btn} type="submit">
           Log In
